@@ -1,5 +1,4 @@
 import express from "express"
-import express from "express"
 import * as path from "path"
 import "dotenv/config"
 import {galaxy} from "./data/data.js"
@@ -12,7 +11,10 @@ app.set("view engine",'ejs')
 app.use(express.static("public"))
 
 app.get("/", (req,res) => {
-   res.render(path.join(__dirname, "/views/pages/index.ejs"))
+   res.render(path.join(__dirname, "/views/pages/index.ejs"),
+   {
+     galaxyArray:galaxy,
+   })
 })
 
 app.listen(port, ()=>{

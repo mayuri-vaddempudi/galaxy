@@ -1,0 +1,16 @@
+<div class="sidebar">
+  <div class="container">
+    <% if (galaxyArray && galaxyArray.length > 0) { %>
+      <% galaxyArray.forEach(item => { %>
+        <div class="title"><%= item.type %></div>
+      <% }) %>
+    <% } else { %>
+      <div>No data available</div>
+    <% } %>
+
+
+      <!-- <a href="" class="a_item hide" data-name="">name</a> -->
+   
+  </div>
+</div>
+
