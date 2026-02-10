@@ -1,6 +1,7 @@
 export const galaxy = [
   {
     type: "Main-Sequence Star",
+    icon: "⭐",
     description:
       "Stars that fuse hydrogen into helium in their cores. Most common type of star.",
     examples: [
@@ -32,6 +33,7 @@ export const galaxy = [
   },
   {
     type: "Terrestrial Planet",
+    icon: "🪐",
     description:
       "Terrestrial planets are rocky worlds composed primarily of silicate rocks, metals, and a solid surface, distinguishing them from gas giants.",
     examples: [
@@ -63,6 +65,7 @@ export const galaxy = [
   },
   {
     type: "Sprial Galaxy",
+    icon: "🌌",
     description:
       "A spiral galaxy is a type of galaxy characterized by a rotating, flat disk featuring spiral arms of gas, dust, and young stars that curve outward from a dense, central bulge of older stars.",
     examples: [
@@ -90,3 +93,4 @@ export const galaxy = [
     ],
   },
 ];
+

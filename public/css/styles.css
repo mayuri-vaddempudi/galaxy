@@ -82,16 +82,21 @@ body {
   cursor: pointer;
   font-size: 20px;
   list-style: none;
+  margin-top: 20px;
   white-space: nowrap;
+}
+
+.icon {
+  font-size: 24px;        
 }
 
 .a_item {
   color: rgb(228, 227, 224);
-  cursor: pointer;
   font-weight: 400;
   font-size: 14px;
   display: block;
   margin-top: 10px;
+  text-decoration: none;
 }
 
 .hide{

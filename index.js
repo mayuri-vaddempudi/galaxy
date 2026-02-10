@@ -8,6 +8,7 @@ const port = process.env.PORT
 const __dirname = path.resolve()
 
 app.set("view engine",'ejs')
+app.set("views", path.join(__dirname, "views")); 
 app.use(express.static("public"))
 
 app.get("/", (req,res) => {
@@ -15,6 +16,7 @@ app.get("/", (req,res) => {
    {
      galaxyArray:galaxy,
    })
+
 })
 
 app.listen(port, ()=>{
