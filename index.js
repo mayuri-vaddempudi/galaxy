@@ -2,6 +2,7 @@ import express from "express"
 import express from "express"
 import * as path from "path"
 import "dotenv/config"
+import {galaxy} from "./data/data.js"
 
 const app = express()
 const port = process.env.PORT
