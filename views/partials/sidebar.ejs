@@ -1,0 +1,17 @@
+<div class="sidebar">
+  <div class="container">
+    <% if (locals.galaxyArray) { %>
+      <% galaxyArray.forEach(item => { %>
+       
+        <div class="title">
+          <span class="icon"><%= item.icon %></span>
+          <%= item.type %> 
+          <% item.examples.forEach(list => { %>
+            <a href="#" class="a_item hide" data-name="<%= list.name %>"><%= list.name %></a>
+          <% }) %>
+        </div>
+      <% }) %> 
+    <% } %>
+  </div>   
+</div>
+
