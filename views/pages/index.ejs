@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
+<%- include("../partials/header") %>
   <link rel="stylesheet" href="/css/styles.css">
-  <script src="/js/javascript.js" defer></script>
-</head>
 
-<body>
-  <%- include("../partials/header.ejs") %>
-  <%- include("../partials/sidebar.ejs")%>
-  <%- include("../partials/footer.ejs") %>
-</body>
-</html>
+  <div class="main">
+    <%- include("../partials/sidebar", { pageType, sidebarItems }) %>
+
+      <div class="main-content" id="details-panel">
+        <h2>Click an item from the sidebar</h2>
+      </div>
+  </div>
+
+  <script src="/js/javascript.js" defer></script>
+  <%- include("../partials/footer") %>

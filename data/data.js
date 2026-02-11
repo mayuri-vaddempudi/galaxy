@@ -192,4 +192,17 @@ export const spiralGalaxies = [
   },
 ];
 
-
+export const aboutDetails = {
+  title: "About Shining Stars",
+  description: "Shining Stars is a web app to explore planets, stars, and galaxies in our universe. Learn about their properties, distances, and more!",
+  team: [
+    { name: "Mayuri", role: "Developer", image: "/images/mayuri.jpg", contact: 123456, address: "stockholm", },
+    { name: "Suneetha", role: "Designer", image: "/images/suneetha.jpg", contact: 123456, address: "stockholm", },
+    { name: "TingLi", role: "Designer", image: "/images/tingli.jpg", contact: 123456, address: "stockholm", },
+    { name: "Gabriell", role: "Designer", image: "/images/gabriell.jpg", contact: 123456, address: "stockholm", }
+  ],
+  contact: {
+    email: "info@shiningstars.com",
+    twitter: "@shiningstars"
+  }
+};

@@ -1,17 +1,21 @@
 <div class="sidebar">
-  <div class="container">
-    <% if (galaxyArray) { %>
-      <% galaxyArray.forEach(item => { %>
-       
-        <div class="title">
-          <span class="icon"><%= item.icon %></span>
-          <%= item.type %> 
-          <% item.examples.forEach(list => { %>
-            <a href="#" class="a_item hide" data-name="<%= list.name %>"><%= list.name %></a>
-          <% }) %>
-        </div>
-      <% }) %> 
-    <% } %>
-  </div>   
-</div>
+  <h2>
+    <% if (pageType==="all" ) { %> 🌌 All Objects
+      <% } else if (pageType==="planets" ) { %> 🪐 Planets
+        <% } else if (pageType==="stars" ) { %> ⭐ Stars
+          <% } else if (pageType==="galaxies" ) { %> 🌠 Galaxies
+            <% } else { %> ℹ️ Info <% } %>
+  </h2>
 
+  <% sidebarItems.forEach(item=> { %>
+    <div class="sidebar-item" data-name="<%= item.name %>" data-type="<%= item.type || pageType %>"
+      data-img="<%= item.image || '' %>" data-desc="<%= item.description || item.role || '' %>"
+      data-color="<%= item.color || '' %>" data-diameter="<%= item.diameter || item.size || '' %>"
+      data-distance="<%= item.distanceFromSun_AU || item.distance || '' %>"
+      data-temp="<%= item.surfaceTempRange || '' %>" data-contact="<%= item.contact || '' %>"
+      data-address="<%= item.address || '' %>">
+      <%= item.name %>
+        <span style="font-size:12px;opacity:0.6;">(<%= item.type || pageType %>)</span>
+    </div>
+    <% }) %>
+</div>
