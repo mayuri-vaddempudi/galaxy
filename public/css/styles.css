@@ -82,6 +82,7 @@ body {
   cursor: pointer;
   font-size: 20px;
   list-style: none;
+  margin-top: 30px;
   white-space: nowrap;
 }
 
@@ -91,7 +92,9 @@ body {
   font-weight: 400;
   font-size: 14px;
   display: block;
+  margin-left: 40px;
   margin-top: 10px;
+  text-decoration: none;
 }
 
 .hide {
@@ -134,14 +137,13 @@ body {
   color: #fff;
   padding: 40px 0 10px;
   font-family: Arial, sans-serif;
+  margin-top: 100px;
 }
 
 .footer p {
   color: #e0e0e0;
   font-size: 1.2rem;
 }
-
-
 
 .footer-container {
   display: flex;
