@@ -1,21 +1,4 @@
 <div class="sidebar">
-<<<<<<< HEAD
-  <div class="container">
-    <% if (locals.galaxyArray) { %>
-      <% galaxyArray.forEach(item => { %>
-       
-        <div class="title">
-          <span class="icon"><%= item.icon %></span>
-          <%= item.type %> 
-          <% item.examples.forEach(list => { %>
-            <a href="#" class="a_item hide" data-name="<%= list.name %>"><%= list.name %></a>
-          <% }) %>
-        </div>
-      <% }) %> 
-    <% } %>
-  </div>   
-</div>
-=======
   <h2>
     <% if (pageType==="all" ) { %> 🌌 All Objects
       <% } else if (pageType==="planets" ) { %> 🪐 Planets
@@ -23,7 +6,6 @@
           <% } else if (pageType==="galaxies" ) { %> 🌠 Galaxies
             <% } else { %> ℹ️ Info <% } %>
   </h2>
->>>>>>> feature/star
 
   <% sidebarItems.forEach(item=> { %>
     <div class="sidebar-item" data-name="<%= item.name %>" data-type="<%= item.type || pageType %>"
