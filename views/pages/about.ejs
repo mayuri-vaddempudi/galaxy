@@ -1,0 +1,50 @@
+<%- include("../partials/header") %>
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <div class="main">
+        <!-- Sidebar -->
+        <%- include("../partials/sidebar", { pageType, sidebarItems }) %>
+
+            <!-- Details Panel -->
+            <div class="main-content" id="details-panel">
+                <h2>Select a team member to see details</h2>
+            </div>
+    </div>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const sidebarItems = document.querySelectorAll(".sidebar-item");
+            const detailsPanel = document.getElementById("details-panel");
+
+            sidebarItems.forEach(item => {
+                item.addEventListener("click", () => {
+                    // Highlight active sidebar item
+                    sidebarItems.forEach(i => i.classList.remove("active"));
+                    item.classList.add("active");
+
+
+                    const name = item.dataset.name;
+                    const img = item.dataset.img;
+                    const role = item.dataset.desc;
+                    const contact = item.dataset.contact;
+                    const address = item.dataset.address;
+
+
+                    detailsPanel.innerHTML = `
+          <div style="display:flex; gap:20px; align-items:flex-start;">
+            ${img ? `<img src="${img}" class="team-img" style="width:150px; border-radius:10px;">` : ""}
+            <div>
+              <h1>${name}</h1>
+              ${role ? `<p><strong>Role:</strong> ${role}</p>` : ""}
+              ${contact ? `<p><strong>Contact:</strong> ${contact}</p>` : ""}
+              ${address ? `<p><strong>Address:</strong> ${address}</p>` : ""}
+            </div>
+          </div>
+        `;
+                });
+            });
+        });
+    </script>
+
+    <%- include("../partials/footer") %>
