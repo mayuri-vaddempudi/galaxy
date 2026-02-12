@@ -72,29 +72,34 @@ body {
   color: #e0e0e0;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 35px;
   height: 100%;
   justify-content: center;
-  padding: 20px;
+  padding: 85px 30px;
 }
 
-.title {
+.sidebar h3{
   cursor: pointer;
   font-size: 20px;
-  list-style: none;
-  margin-top: 30px;
+  margin-top: -5px;
   white-space: nowrap;
 }
 
-.a_item {
-  color: rgb(228, 227, 224);
+.sidebar-item[data-type ="title"] span
+{
+  display: none;
+}
+
+.sidebar-item {
   cursor: pointer;
-  font-weight: 400;
-  font-size: 14px;
+  display: none; 
+  margin-left: 15px; 
+  margin-top: -25px;
+  font-size: 16px;
+}
+
+.sidebar-item.show{
   display: block;
-  margin-left: 40px;
-  margin-top: 10px;
-  text-decoration: none;
 }
 
 .hide {
@@ -118,16 +123,37 @@ body {
 }
 
 .content #canvas {
+  
   display: block;
-  flex: 1;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
+
 }
 
 .detail {
-  color: #d40c0c;
+  align-items: center;
+  color:  #e0e0e0;
+  display: flex;
   margin: auto;
-  padding: 20px;
   z-index: 99;
+}
+
+.detail img{
+  margin-right: 66px;
+  height: 96px;
+  width: 100px;
+}
+
+.detail .desc{
+  display: flex;
+  flex-direction: column;
+}
+
+.desc a {
+  color:  #e0e0e0;
+  display: block;
+  font-size: 1rem;
+  margin-top: 20px;
 }
 
 .footer {
@@ -137,7 +163,6 @@ body {
   color: #fff;
   padding: 40px 0 10px;
   font-family: Arial, sans-serif;
-  margin-top: 100px;
 }
 
 .footer p {
@@ -179,3 +204,4 @@ body {
   border-top: 1px solid #333;
   padding-top: 10px;
 }
+
