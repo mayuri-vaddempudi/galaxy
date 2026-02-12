@@ -8,7 +8,6 @@ import aboutRouter from "./routes/aboutRouter.js";
 
 const allItems = [
   ...terrestrialPlanets.map(p => ({ ...p, type: "planet" })),
-
 ];
 
 const app = express()
@@ -38,9 +37,6 @@ app.get("/planets", (req, res) => {
     })
 
 })
-
-
-
 
 app.get("/about", (req, res) => {
   res.render("pages/about", {
