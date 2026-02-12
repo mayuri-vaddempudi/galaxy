@@ -10,10 +10,7 @@ import {
 import planetRouter from "./routes/planetRouter.js";
 import aboutRouter from "./routes/aboutRouter.js";
 
-const allItems = [
-  ...terrestrialPlanets.map((p) => ({ ...p, type: "planet" })),
-  ...mainSequenceStars.map((s) => ({ ...s, type: "star" })),
-];
+const allItems = [...terrestrialPlanets.map((p) => ({ ...p, type: "planet" }))];
 
 const app = express();
 const port = process.env.PORT;
@@ -34,6 +31,7 @@ app.get("/", (req, res) => {
 
 app.get("/planets", (req, res) => {
   res.render(path.join(__dirname, "/views/pages/index.ejs"), {
+    pageType: "planets",
     pageType: "planets",
     sidebarItems: terrestrialPlanets,
     selectedItem: null,
