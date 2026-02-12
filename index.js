@@ -12,11 +12,12 @@ import aboutRouter from "./routes/aboutRouter.js";
 
 const allItems = [...terrestrialPlanets.map((p) => ({ ...p, type: "planet" }))];
 
-const app = express();
-const port = process.env.PORT;
-const __dirname = path.resolve();
 
-app.set("view engine", "ejs");
+const app = express()
+const port = process.env.PORT
+const __dirname = path.resolve()
+
+app.set("view engine", 'ejs')
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static("public"));
 app.use("/planets", planetRouter);
@@ -62,7 +63,7 @@ app.get("/stars", (req, res) => {
 
   res.render(path.join(__dirname, "/views/pages/index.ejs"), {
     pageType: "stars",
-    sidebarItems: mainSequenceStars,
+    sidebarItems: mainSequenceStars
   });
 });
 
@@ -81,4 +82,5 @@ app.get("/about", (req, res) => {
 
 app.listen(port, () => {
   console.log(`Server is running on ${port}`);
-});
+
+})
