@@ -5,7 +5,70 @@
     <%- include("../partials/sidebar", { pageType, sidebarItems }) %>
 
       <div class="main-content" id="details-panel">
-        <h2>Click an item from the sidebar</h2>
+        <% if (typeof welcomeBox !=="undefined" && welcomeBox) { %>
+          <div class="welcome-box">
+            <h1>
+              <%= welcomeBox.title %>
+            </h1>
+            <p>
+              <%= welcomeBox.description %>
+            </p>
+          </div>
+          <% } else if (typeof selectedItem !=="undefined" && selectedItem) { %>
+            <div style="display:flex; align-items:flex-start; gap:20px;">
+              <% if (selectedItem.image) { %>
+                <img src="<%= selectedItem.image %>" class="details-img"
+                  style="width:200px; height:auto; border-radius:10px;">
+                <% } %>
+                  <div class="details-text">
+                    <h1>
+                      <%= selectedItem.name %>
+                    </h1>
+                    <% if (selectedItem.type) { %>
+                      <p><strong>Type:</strong>
+                        <%= selectedItem.type %>
+                      </p>
+                      <% } %>
+                        <% if (selectedItem.color) { %>
+                          <p><strong>Color:</strong>
+                            <%= selectedItem.color %>
+                          </p>
+                          <% } %>
+                            <% if (selectedItem.diameter) { %>
+                              <p><strong>Diameter:</strong>
+                                <%= selectedItem.diameter %>
+                              </p>
+                              <% } %>
+                                <% if (selectedItem.distance) { %>
+                                  <p><strong>Distance:</strong>
+                                    <%= selectedItem.distance %>
+                                  </p>
+                                  <% } %>
+                                    <% if (selectedItem.temp) { %>
+                                      <p><strong>Temperature:</strong>
+                                        <%= selectedItem.temp %>
+                                      </p>
+                                      <% } %>
+                                        <% if (selectedItem.desc) { %>
+                                          <p class="desc">
+                                            <%= selectedItem.desc %>
+                                          </p>
+                                          <% } %>
+                                            <% if (selectedItem.contact) { %>
+                                              <p><strong>Contact:</strong>
+                                                <%= selectedItem.contact %>
+                                              </p>
+                                              <% } %>
+                                                <% if (selectedItem.address) { %>
+                                                  <p><strong>Address:</strong>
+                                                    <%= selectedItem.address %>
+                                                  </p>
+                                                  <% } %>
+                  </div>
+            </div>
+            <% } else { %>
+              <h2>Click an item from the sidebar</h2>
+              <% } %>
       </div>
   </div>
 

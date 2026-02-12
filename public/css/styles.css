@@ -234,3 +234,11 @@ body {
 .details-info p {
   margin: 5px 0;
 }
+
+.details-text h1 {
+  color: #ffcc00;
+}
+
+.welcome-box h1 {
+  color: #ffcc00;
+}
