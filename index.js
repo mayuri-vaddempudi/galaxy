@@ -10,7 +10,10 @@ import {
 import planetRouter from "./routes/planetRouter.js";
 import aboutRouter from "./routes/aboutRouter.js";
 
-const allItems = [...terrestrialPlanets.map((p) => ({ ...p, type: "planet" }))];
+const allItems = [
+  ...terrestrialPlanets.map((p) => ({ ...p, type: "planet" })),
+  ...mainSequenceStars.map((s) => ({ ...s, type: "star" })),
+];
 
 
 const app = express()
