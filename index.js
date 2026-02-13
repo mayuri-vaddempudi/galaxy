@@ -32,15 +32,6 @@ app.get("/", (req, res) => {
 });
 
 app.get("/planets", (req, res) => {
-  const welcomeBox = {
-    title: "🌍 Welcome to the Planets Page",
-    description: `Planets are celestial bodies that orbit stars. In our solar system, there are
-    eight planets including Earth, Mars, Jupiter, and Saturn. Each planet has unique
-    features like atmosphere, temperature, and moons.
-    
-    Click on a planet in the sidebar to explore its details.`
-  };
-
   res.render(path.join(__dirname, "/views/pages/index.ejs"), {
     pageType: "planets",
     sidebarItems: terrestrialPlanets,
@@ -50,10 +41,9 @@ app.get("/planets", (req, res) => {
 });
 
 app.get("/stars", (req, res) => {
-
   res.render(path.join(__dirname, "/views/pages/index.ejs"), {
     pageType: "stars",
-    sidebarItems: mainSequenceStars
+    sidebarItems: mainSequenceStars,
   });
 });
 
@@ -67,6 +57,7 @@ app.get("/about", (req, res) => {
       { name: "Contact", type: "info" },
     ],
     aboutDetails,
+    welcomeBox
   });
 });
 

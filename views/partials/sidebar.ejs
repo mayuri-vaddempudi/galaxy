@@ -9,7 +9,7 @@
 
   <% sidebarItems.forEach(item=> { %>
     <div class="sidebar-item" data-name="<%= item.name %>" data-type="<%= item.type || pageType %>"
-      data-img="<%= item.image || '' %>" data-desc="<%= item.description || item.role || '' %>"
+      data-img="<%= item.img || item.image || '' %>" data-desc="<%= item.description || item.role || '' %>"
       data-color="<%= item.color || '' %>" data-diameter="<%= item.diameter || item.size || '' %>"
       data-distance="<%= item.distanceFromSun_AU || item.distance || '' %>"
       data-temp="<%= item.surfaceTempRange || '' %>" data-contact="<%= item.contact || '' %>"

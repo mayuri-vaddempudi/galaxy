@@ -31,8 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Render panel with image on left and details on right
       detailsPanel.innerHTML = `
-        <div style="display:flex; align-items:anchor-center; gap:50px;">
-          ${img ? `<img src="${img}" class="details-img" style="width:200px; height:auto; border-radius:10px;">` : ""}
+        <div class="details">
+          ${img ? `<img src="${img}" class="details-img">` : ""}
           <div class="details-text">
             <h1>${name}</h1>
             ${type ? `<p><strong>Type:</strong> ${type}</p>` : ""}
@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ${distance ? `<p><strong>Distance:</strong> ${distance}</p>` : ""}
             ${temp ? `<p><strong>Temperature:</strong> ${temp}</p>` : ""}
             ${desc ? `<p class="desc">${desc}</p>` : ""}
+            
             ${contact ? `<p><strong>Contact:</strong> ${contact}</p>` : ""}
             ${address ? `<p><strong>Address:</strong> ${address}</p>` : ""}
           </div>
