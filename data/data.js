@@ -98,13 +98,14 @@
 export const mainSequenceStars = [
   {
     name: "Sun",
-    image: "/images/sun.jpg",
+    image: "/images/sun1.jpg",
     spectralType: "G-type",
     distanceLightYears: 0,
     color: "Yellow",
     size: "1.4 million km diameter",
     temperature: "5500°C",
-    description: "The Sun is the center of our solar system and provides energy for life on Earth.",
+    description:
+      "The Sun is the center of our solar system and provides energy for life on Earth.",
   },
   {
     name: "Sirius",
@@ -114,7 +115,8 @@ export const mainSequenceStars = [
     color: "White",
     size: "2.38 million km diameter",
     temperature: "9940°C",
-    description: "Sirius is the brightest star in the night sky, located in the Canis Major constellation.",
+    description:
+      "Sirius is the brightest star in the night sky, located in the Canis Major constellation.",
   },
   {
     name: "Proxima Centauri",
@@ -127,7 +129,6 @@ export const mainSequenceStars = [
     description: "Proxima Centauri is the closest known star to the Sun.",
   },
 ];
-
 
 // 🪐 Terrestrial Planets
 export const terrestrialPlanets = [
@@ -156,10 +157,10 @@ export const terrestrialPlanets = [
     color: "Red",
     diameter: "6,779 km",
     surfaceTempRange: "-143°C to 35°C",
-    description: "Mars is known as the Red Planet and may have had water in the past.",
+    description:
+      "Mars is known as the Red Planet and may have had water in the past.",
   },
 ];
-
 
 // 🌌 Spiral Galaxies
 export const spiralGalaxies = [
@@ -170,7 +171,8 @@ export const spiralGalaxies = [
     diameterLightYears: 105700,
     stars: "100–400 billion",
     distanceFromUs: 0,
-    description: "The Milky Way is our home galaxy containing our solar system.",
+    description:
+      "The Milky Way is our home galaxy containing our solar system.",
   },
   {
     name: "Andromeda Galaxy",
@@ -194,15 +196,40 @@ export const spiralGalaxies = [
 
 export const aboutDetails = {
   title: "About Shining Stars",
-  description: "Shining Stars is a web app to explore planets, stars, and galaxies in our universe. Learn about their properties, distances, and more!",
+  description:
+    "Shining Stars is a web app to explore planets, stars, and galaxies in our universe. Learn about their properties, distances, and more!",
   team: [
-    { name: "Mayuri", role: "Developer", image: "/images/mayuri.jpg", contact: 123456, address: "stockholm", },
-    { name: "Suneetha", role: "Designer", image: "/images/suneetha.jpg", contact: 123456, address: "stockholm", },
-    { name: "TingLi", role: "Designer", image: "/images/tingli.jpg", contact: 123456, address: "stockholm", },
-    { name: "Gabriell", role: "Designer", image: "/images/gabriell.jpg", contact: 123456, address: "stockholm", }
+    {
+      name: "Mayuri",
+      role: "Developer",
+      image: "/images/mayuri.jpg",
+      contact: 123456,
+      address: "stockholm",
+    },
+    {
+      name: "Suneetha",
+      role: "Designer",
+      image: "/images/suneetha.jpg",
+      contact: 123456,
+      address: "stockholm",
+    },
+    {
+      name: "TingLi",
+      role: "Designer",
+      image: "/images/tingli.jpg",
+      contact: 123456,
+      address: "stockholm",
+    },
+    {
+      name: "Gabriell",
+      role: "Designer",
+      image: "/images/gabriell.jpg",
+      contact: 123456,
+      address: "stockholm",
+    },
   ],
   contact: {
     email: "info@shiningstars.com",
-    twitter: "@shiningstars"
-  }
+    twitter: "@shiningstars",
+  },
 };
