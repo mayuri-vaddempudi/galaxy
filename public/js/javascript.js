@@ -1,5 +1,3 @@
-
-
 const menu = document.querySelector(".menu");
 menu.addEventListener("click", (e) => {
   if (e.target.tagName === "A") {

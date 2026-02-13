@@ -3,8 +3,6 @@ import {spiralGalaxies} from "../data/data.js";
 
 const galaxyRouter = express.Router();
 
-
-
 galaxyRouter.get("/:name", (req, res) => {
   const paramName = req.params.name.trim().toLowerCase();
   const selectedItem = spiralGalaxies.find(
@@ -25,4 +23,5 @@ galaxyRouter.get("/", (req, res) => {
     selectedItem: null,
   });
 });
+
 export default galaxyRouter;

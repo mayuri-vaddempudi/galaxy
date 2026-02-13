@@ -3,8 +3,6 @@ import { terrestrialPlanets } from "../data/data.js";
 
 const planetRouter = express.Router();
 
-
-
 // Show single planet details
 planetRouter.get("/:name", (req, res) => {
     const paramName = req.params.name.trim().toLowerCase();
@@ -25,4 +23,5 @@ planetRouter.get("/", (req, res) => {
         selectedItem: null
     });
 });
+
 export default planetRouter;

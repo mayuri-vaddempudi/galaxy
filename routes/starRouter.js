@@ -24,5 +24,4 @@ starRouter.get("/", (req, res) => {
     });
 });
 
-
 export default starRouter;
