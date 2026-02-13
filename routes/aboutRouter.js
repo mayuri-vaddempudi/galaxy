@@ -2,28 +2,25 @@ import express from "express";
 import { aboutDetails } from "../data/data.js";
 
 const router = express.Router();
-const welcomeBox = {
-    title: "Welcome to the About Page",
-    description: "Learn more about our team, mission, and how Shining Stars works. Click on a team member to see their profile!"
-};
 
-router.get("/", (req, res) => {
-
-    const sidebarItems = aboutDetails.team.map(member => ({
-        name: member.name,
-        type: "team",
-        img: member.image,
-        desc: member.role,
-        contact: member.contact,
-        address: member.address
-    }));
-
-    res.render("pages/about", {
+router.get("/:name", (req, res) => {
+    const paramName = req.params.name.trim().toLowerCase();
+    const selectedItem = aboutDetails.find( p => p.name.toLowerCase() === paramName);
+    res.render("pages/featured.ejs", {
         pageType: "about",
-        sidebarItems,
-        aboutDetails,
-        welcomeBox,
+        sidebarItems: aboutDetails,
+        selectedItem:selectedItem
     });
 });
+
+router.get("/", (req, res) => {
+  res.render("pages/featured.ejs", {
+    pageType: "about",
+    sidebarItems: aboutDetails,
+    selectedItem: null,
+  });
+});
+
+    
 
 export default router;

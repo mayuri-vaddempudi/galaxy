@@ -1,73 +1,46 @@
-import express from "express";
-import * as path from "path";
-import "dotenv/config";
-import {
-  mainSequenceStars,
-  terrestrialPlanets,
-  spiralGalaxies,
-  aboutDetails,
-} from "./data/data.js";
+import express from "express"
+import * as path from "path"
+import "dotenv/config"
+import { mainSequenceStars, terrestrialPlanets, spiralGalaxies, aboutDetails } from "./data/data.js";
 import planetRouter from "./routes/planetRouter.js";
-import aboutRouter from "./routes/aboutRouter.js";
+import galaxyRouter from "./routes/galaxyRouter.js";
+import router from "./routes/aboutRouter.js";
+import starRouter from "./routes/starRouter.js";
 
 const allItems = [
-  ...terrestrialPlanets.map((p) => ({ ...p, type: "planet" })),
-  ...mainSequenceStars.map((s) => ({ ...s, type: "star" })),
+  { name: "Terrestrial Planets", type: "title" },
+  ...terrestrialPlanets.map(p => ({ ...p, type: "planets" })),
+  { name: "Main-Sequence Star", type: "title" },
+  ...mainSequenceStars.map(s => ({ ...s, type: "stars" })),
+  { name: "Spiral Galaxies", type: "title" },
+  ...spiralGalaxies.map(g => ({ ...g, type: "galaxies" })),
+
 ];
+ 
+const app = express()
+const port = process.env.PORT
+const __dirname = path.resolve()
 
-const app = express();
-const port = process.env.PORT;
-const __dirname = path.resolve();
+app.set("view engine",'ejs')
+app.set("views", path.join(__dirname, "views")); 
+app.use(express.static("public"))
 
-app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "views"));
-app.use(express.static("public"));
+app.use('/data', express.static(path.join(__dirname, 'data')));
+
+app.get("/", (req,res) => {
+   res.render(path.join(__dirname, "/views/pages/index.ejs"),
+   {
+      pageType: "all",
+      sidebarItems: allItems
+   })
+
+})
+
 app.use("/planets", planetRouter);
-app.use("/about", aboutRouter);
-
-app.get("/", (req, res) => {
-  res.render(path.join(__dirname, "/views/pages/index.ejs"), {
-    pageType: "all",
-    sidebarItems: allItems,
-  });
-});
-
-app.get("/planets", (req, res) => {
-  res.render(path.join(__dirname, "/views/pages/index.ejs"), {
-    pageType: "planets",
-    pageType: "planets",
-    sidebarItems: terrestrialPlanets,
-    selectedItem: null,
-  });
-});
-app.get("/stars", (req, res) => {
-  const welcomeBox = {
-    title: "Welcome to the Stars Page",
-    description: `Explore main sequence stars such as the Sun, Sirius, and Proxima Centauri. 
-    Click on a star in the sidebar to view detailed information about it, including its type,color and diameter.
-    Stars are luminous spheres of plasma held together by gravity, they form galaxies and provide light and energy to planetary systems.
-    Click on a star in the sidebar to explore its details.`,
-  };
-  res.render(path.join(__dirname, "/views/pages/index.ejs"), {
-    pageType: "stars",
-    sidebarItems: mainSequenceStars,
-    welcomeBox,
-  });
-});
-
-app.get("/about", (req, res) => {
-  res.render("pages/about", {
-    pageType: "about",
-    sidebarItems: [
-      { name: "About Us", type: "info" },
-      { name: "Team", type: "info" },
-      { name: "Contact", type: "info" },
-    ],
-    aboutDetails,
-    welcomeBox,
-  });
-});
-
-app.listen(port, () => {
+app.use("/stars", starRouter)
+app.use("/galaxies", galaxyRouter);
+app.use("/about", router)
+app.listen(port, ()=>{
   console.log(`Server is running on ${port}`);
-});
+  
+})

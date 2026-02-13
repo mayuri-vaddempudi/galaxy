@@ -1,9 +1,56 @@
-<html>
+<body class="detail-page">
 
-<body>
-    <div>
+<%- include("../partials/header") %>
+  <link rel="stylesheet" href="/css/styles.css">
 
+  <div class="main">
+    <%- include("../partials/sidebar", { pageType, sidebarItems }) %>
+
+     <div class="main-content" id="details-panel">
+
+        <% if (selectedItem) { %>
+
+          <h1><%= selectedItem.name %></h1>
+
+          <% if (selectedItem.image) { %>
+            <img src="<%= selectedItem.image%>" alt="<%= selectedItem.name %>" width="80px" height="70px">
+          <% } %>
+          <% if (selectedItem.description) { %>
+            <p><%= selectedItem.description %></p>
+          <% } %>
+          <% if (selectedItem.surfaceTempRange) { %>
+            <p>Temperature: <%= selectedItem.surfaceTempRange %></p>
+          <% } %>
+          <% if (selectedItem.color) { %>
+            <p>Color: <%= selectedItem.color %></p>
+          <% } %>
+          <% if (selectedItem.diameter) { %>
+           <p>Diameter: <%= selectedItem.diameter %></p>
+          <% } %>
+          <% if (selectedItem.distance||selectedItem.distanceFromSun_AU ) { %>
+            <p>Distance: <%= selectedItem.distance || selectedItem.distanceFromSun_AU %></p>
+          <% } %>
+          <% if (selectedItem.morphologicalType) { %>
+            <p>MorphologicalType: <%= selectedItem.morphologicalType %></p>
+          <% } %>
+          <% if (selectedItem.diameterLightYears) { %>
+            <p>DiameterLightYears: <%= selectedItem.diameterLightYears %></p>
+          <% } %>
+          <% if (selectedItem.surfaceTempRange) { %>
+            <p>Temperature: <%= selectedItem.surfaceTempRange %></p>
+          <% } %>
+          <% if (selectedItem.contact) { %>
+             <p>Contact: <%= selectedItem.contact %></p>
+          <% } %>
+          <% if (selectedItem.address) { %>
+            <p>address: <%= selectedItem.address %></p>
+          <% } %>
+          <% } else { %>
+            <h2>Click an item from the sidebar</h2>
+          <% } %>
     </div>
-</body>
+  </div>
 
-</html>
+  <script src="/js/javascript.js" defer></script>
+<%- include("../partials/footer") %>
+</body>

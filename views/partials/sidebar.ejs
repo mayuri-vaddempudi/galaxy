@@ -1,21 +1,32 @@
-<div class="sidebar">
+<div class="sidebar <%= pageType === 'all' ? 'home-hide' : '' %>">
   <h2>
-    <% if (pageType==="all" ) { %> 🌌 All Objects
-      <% } else if (pageType==="planets" ) { %> 🪐 Planets
-        <% } else if (pageType==="stars" ) { %> ⭐ Stars
-          <% } else if (pageType==="galaxies" ) { %> 🌠 Galaxies
+    <% if (locals.pageType ==="all") { %> 🌌 All Objects
+      <% } else if (locals.pageType==="planets" ) { %> 🪐 Planets
+        <% } else if (locals.pageType==="stars" ) { %> ⭐ Stars
+          <% } else if (locals.pageType==="galaxies" ) { %> 🌠 Galaxies
             <% } else { %> ℹ️ Info <% } %>
   </h2>
-
-  <% sidebarItems.forEach(item=> { %>
-    <div class="sidebar-item" data-name="<%= item.name %>" data-type="<%= item.type || pageType %>"
-      data-img="<%= item.img || item.image || '' %>" data-desc="<%= item.description || item.role || '' %>"
-      data-color="<%= item.color || '' %>" data-diameter="<%= item.diameter || item.size || '' %>"
-      data-distance="<%= item.distanceFromSun_AU || item.distance || '' %>"
-      data-temp="<%= item.surfaceTempRange || '' %>" data-contact="<%= item.contact || '' %>"
-      data-address="<%= item.address || '' %>">
-      <%= item.name %>
+  <% sidebarItems.forEach(item=> { 
+    if (item.type === "title") { %>
+      <h3><%= item.name %></h3> 
+    <% } else { %>
+      <div class="sidebar-item" 
+       
+        data-name="<%= item.name %>" 
+        data-type="<%= item.type || pageType %>"
+        data-img="<%= item.image || '' %>" 
+        data-desc="<%= item.description || item.role || '' %>"
+        data-color="<%= item.color || '' %>" 
+        data-diameter="<%= item.diameter || item.size || '' %>"
+        data-distance="<%= item.distanceFromSun_AU || item.distance || '' %>"
+        data-temp="<%= item.surfaceTempRange || '' %>" 
+        data-mor="<%= item.morphologicalType || '' %>"
+        data-year="<%= item.diameterLightYears || '' %>"
+        data-contact="<%= item.contact || '' %>"
+        data-address="<%= item.address || '' %>">
+        <%= item.name %>
         <span style="font-size:12px;opacity:0.6;">(<%= item.type || pageType %>)</span>
     </div>
-    <% }) %>
+    <% } %>
+  <% }) %>  
 </div>
