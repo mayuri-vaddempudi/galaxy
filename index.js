@@ -15,17 +15,15 @@ const allItems = [
   ...mainSequenceStars.map((s) => ({ ...s, type: "star" })),
 ];
 
+const app = express();
+const port = process.env.PORT;
+const __dirname = path.resolve();
 
-const app = express()
-const port = process.env.PORT
-const __dirname = path.resolve()
-
-app.set("view engine", 'ejs')
+app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static("public"));
 app.use("/planets", planetRouter);
 app.use("/about", aboutRouter);
-
 
 app.get("/", (req, res) => {
   res.render(path.join(__dirname, "/views/pages/index.ejs"), {
@@ -35,31 +33,19 @@ app.get("/", (req, res) => {
 });
 
 app.get("/planets", (req, res) => {
-  const welcomeBox = {
-    title: "🌍 Welcome to the Planets Page",
-    description: `Planets are celestial bodies that orbit stars. In our solar system, there are
-    eight planets including Earth, Mars, Jupiter, and Saturn. Each planet has unique
-    features like atmosphere, temperature, and moons.
-    
-    Click on a planet in the sidebar to explore its details.`
-  };
-
   res.render(path.join(__dirname, "/views/pages/index.ejs"), {
     pageType: "planets",
+    pageType: "planets",
     sidebarItems: terrestrialPlanets,
-    welcomeBox,
     selectedItem: null,
   });
 });
-
 app.get("/stars", (req, res) => {
-
   res.render(path.join(__dirname, "/views/pages/index.ejs"), {
     pageType: "stars",
-    sidebarItems: mainSequenceStars
+    sidebarItems: mainSequenceStars,
   });
 });
-
 
 app.get("/about", (req, res) => {
   res.render("pages/about", {
@@ -75,5 +61,4 @@ app.get("/about", (req, res) => {
 
 app.listen(port, () => {
   console.log(`Server is running on ${port}`);
-
-})
+});
