@@ -2,15 +2,18 @@ import express from "express"
 import * as path from "path"
 import "dotenv/config"
 import { mainSequenceStars, terrestrialPlanets, spiralGalaxies, aboutDetails } from "./data/data.js";
-
+import planetRouter from "./routes/planetRouter.js";
+import galaxyRouter from "./routes/galaxyRouter.js";
+import router from "./routes/aboutRouter.js";
+import starRouter from "./routes/starRouter.js";
 
 const allItems = [
   { name: "Terrestrial Planets", type: "title" },
-  ...terrestrialPlanets.map(p => ({ ...p, type: "planet" })),
+  ...terrestrialPlanets.map(p => ({ ...p, type: "planets" })),
   { name: "Main-Sequence Star", type: "title" },
-  ...mainSequenceStars.map(s => ({ ...s, type: "star" })),
+  ...mainSequenceStars.map(s => ({ ...s, type: "stars" })),
   { name: "Spiral Galaxies", type: "title" },
-  ...spiralGalaxies.map(g => ({ ...g, type: "galaxy" })),
+  ...spiralGalaxies.map(g => ({ ...g, type: "galaxies" })),
 
 ];
  
@@ -33,6 +36,10 @@ app.get("/", (req,res) => {
 
 })
 
+app.use("/planets", planetRouter);
+app.use("/stars", starRouter)
+app.use("/galaxies", galaxyRouter);
+app.use("/about", router)
 app.listen(port, ()=>{
   console.log(`Server is running on ${port}`);
   

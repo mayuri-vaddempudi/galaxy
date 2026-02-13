@@ -1,7 +1,7 @@
 <nav class="menu">
-  <a href="/" class="active">Home</a>
-  <a href="/Star">Star</a>
-  <a href="/Planet">Planet</a>
-  <a href="/Galax">Galaxy</a>
-  <a href="/About">About Us</a>
+  <a href="/" class="<%= pageType === 'all' ? 'active' : '' %>">Home</a>
+  <a href="/stars" class="<%= pageType === 'stars' ? 'active' : '' %>">Star</a>
+  <a href="/planets" class="<%= pageType === 'planets' ? 'active' : '' %>">Planet</a>
+  <a href="/galaxies" class="<%= pageType === 'galaxies' ? 'active' : '' %>">Galaxy</a>
+  <a href="/about" class="<%= pageType === 'about' ? 'active' : '' %>">About Us</a>
 </nav>
