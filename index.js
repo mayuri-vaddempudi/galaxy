@@ -56,6 +56,7 @@ app.get("/about", (req, res) => {
       { name: "Contact", type: "info" },
     ],
     aboutDetails,
+    welcomeBox
   });
 });
 

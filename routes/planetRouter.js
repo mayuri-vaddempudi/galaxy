@@ -4,7 +4,7 @@ import { terrestrialPlanets } from "../data/data.js";
 const planetRouter = express.Router();
 
 const welcomeBox = {
-    title: "🌍 Welcome to the Planets Page",
+    title: " Welcome to the Planets Page",
     description: `Planets are celestial bodies that orbit stars. In our solar system, there are
 eight planets including Earth, Mars, Jupiter, and Saturn. Each planet has unique
 features like atmosphere, temperature, and moons.

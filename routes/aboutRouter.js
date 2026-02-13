@@ -2,6 +2,10 @@ import express from "express";
 import { aboutDetails } from "../data/data.js";
 
 const router = express.Router();
+const welcomeBox = {
+    title: "Welcome to the About Page",
+    description: "Learn more about our team, mission, and how Shining Stars works. Click on a team member to see their profile!"
+};
 
 router.get("/", (req, res) => {
 
@@ -17,7 +21,8 @@ router.get("/", (req, res) => {
     res.render("pages/about", {
         pageType: "about",
         sidebarItems,
-        aboutDetails
+        aboutDetails,
+        welcomeBox,
     });
 });
 
