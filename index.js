@@ -15,17 +15,15 @@ const allItems = [
   ...mainSequenceStars.map((s) => ({ ...s, type: "star" })),
 ];
 
+const app = express();
+const port = process.env.PORT;
+const __dirname = path.resolve();
 
-const app = express()
-const port = process.env.PORT
-const __dirname = path.resolve()
-
-app.set("view engine", 'ejs')
+app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static("public"));
 app.use("/planets", planetRouter);
 app.use("/about", aboutRouter);
-
 
 app.get("/", (req, res) => {
   res.render(path.join(__dirname, "/views/pages/index.ejs"), {
@@ -37,19 +35,31 @@ app.get("/", (req, res) => {
 app.get("/planets", (req, res) => {
   res.render(path.join(__dirname, "/views/pages/index.ejs"), {
     pageType: "planets",
+    pageType: "planets",
     sidebarItems: terrestrialPlanets,
-    welcomeBox,
     selectedItem: null,
   });
 });
-
 app.get("/stars", (req, res) => {
+<<<<<<< HEAD
   res.render(path.join(__dirname, "/views/pages/index.ejs"), {
     pageType: "stars",
     sidebarItems: mainSequenceStars,
+=======
+  const welcomeBox = {
+    title: "⭐ Welcome to the Stars Page",
+    description: `Explore main sequence stars such as the Sun, Sirius, and Proxima Centauri. 
+    Click on a star in the sidebar to view detailed information about it, including its type,color and diameter.
+    Stars are luminous spheres of plasma held together by gravity, they form galaxies and provide light and energy to planetary systems.
+    Click on a star in the sidebar to explore its details.`,
+  };
+  res.render(path.join(__dirname, "/views/pages/index.ejs"), {
+    pageType: "stars",
+    sidebarItems: mainSequenceStars,
+    welcomeBox,
+>>>>>>> feature/star
   });
 });
-
 
 app.get("/about", (req, res) => {
   res.render("pages/about", {
@@ -66,5 +76,4 @@ app.get("/about", (req, res) => {
 
 app.listen(port, () => {
   console.log(`Server is running on ${port}`);
-
-})
+});
