@@ -41,9 +41,17 @@ app.get("/planets", (req, res) => {
   });
 });
 app.get("/stars", (req, res) => {
+  const welcomeBox = {
+    title: "⭐ Welcome to the Stars Page",
+    description: `Explore main sequence stars such as the Sun, Sirius, and Proxima Centauri. 
+    Click on a star in the sidebar to view detailed information about it, including its type,color and diameter.
+    Stars are luminous spheres of plasma held together by gravity, they form galaxies and provide light and energy to planetary systems.
+    Click on a star in the sidebar to explore its details.`,
+  };
   res.render(path.join(__dirname, "/views/pages/index.ejs"), {
     pageType: "stars",
     sidebarItems: mainSequenceStars,
+    welcomeBox,
   });
 });
 
