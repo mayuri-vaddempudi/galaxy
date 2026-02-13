@@ -26,6 +26,7 @@ app.use(express.static("public"));
 app.use("/planets", planetRouter);
 app.use("/about", aboutRouter);
 
+
 app.get("/", (req, res) => {
   res.render(path.join(__dirname, "/views/pages/index.ejs"), {
     pageType: "all",
@@ -34,20 +35,22 @@ app.get("/", (req, res) => {
 });
 
 app.get("/planets", (req, res) => {
-  res.render(path.join(__dirname, "/views/pages/index.ejs"),
-    {
-      pageType: "planets",
-      sidebarItems: terrestrialPlanets,
-      selectedItem: null
-    })
+  res.render(path.join(__dirname, "/views/pages/index.ejs"), {
+    pageType: "planets",
+    sidebarItems: terrestrialPlanets,
+    welcomeBox,
+    selectedItem: null,
+  });
+});
 
-})
 app.get("/stars", (req, res) => {
   res.render(path.join(__dirname, "/views/pages/index.ejs"), {
     pageType: "stars",
-    sidebarItems: mainSequenceStars
+    sidebarItems: mainSequenceStars,
   });
 });
+
+
 app.get("/about", (req, res) => {
   res.render("pages/about", {
     pageType: "about",
@@ -57,6 +60,7 @@ app.get("/about", (req, res) => {
       { name: "Contact", type: "info" },
     ],
     aboutDetails,
+    welcomeBox
   });
 });
 

@@ -7,7 +7,18 @@
 
             <!-- Details Panel -->
             <div class="main-content" id="details-panel">
-                <h2>Select a team member to see details</h2>
+                <% if (typeof welcomeBox !=="undefined" && welcomeBox) { %>
+                    <div class="welcome-box">
+                        <h1>
+                            <%= welcomeBox.title %>
+                        </h1>
+                        <p>
+                            <%= welcomeBox.description %>
+                        </p>
+                    </div>
+                    <% } else { %>
+                        <h2>Select a team member to see details</h2>
+                        <% } %>
             </div>
     </div>
 
@@ -32,9 +43,9 @@
 
 
                     detailsPanel.innerHTML = `
-          <div style="display:flex; gap:20px; align-items:flex-start;">
+          <div class="details">
             ${img ? `<img src="${img}" class="team-img" style="width:150px; border-radius:10px;">` : ""}
-            <div>
+            <div class="details-text">
               <h1>${name}</h1>
               ${role ? `<p><strong>Role:</strong> ${role}</p>` : ""}
               ${contact ? `<p><strong>Contact:</strong> ${contact}</p>` : ""}

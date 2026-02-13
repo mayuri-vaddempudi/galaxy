@@ -1,13 +1,18 @@
-console.log("Script loaded");
-
 document.addEventListener("DOMContentLoaded", () => {
   const sidebarItems = document.querySelectorAll(".sidebar-item");
   const detailsPanel = document.getElementById("details-panel");
+
+  const welcomeBox = document.querySelector(".welcome-box");
+
+  if (welcomeBox) {
+    detailsPanel.innerHTML = welcomeBox.outerHTML;
+  }
 
   if (!detailsPanel) return;
 
   sidebarItems.forEach(item => {
     item.addEventListener("click", () => {
+      if (welcomeBox) welcomeBox.remove();
       // Highlight active item
       sidebarItems.forEach(i => i.classList.remove("active"));
       item.classList.add("active");
@@ -26,8 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Render panel with image on left and details on right
       detailsPanel.innerHTML = `
-        <div style="display:flex; align-items:flex-start; gap:20px;">
-          ${img ? `<img src="${img}" class="details-img" style="width:200px; height:auto; border-radius:10px;">` : ""}
+        <div class="details">
+          ${img ? `<img src="${img}" class="details-img">` : ""}
           <div class="details-text">
             <h1>${name}</h1>
             ${type ? `<p><strong>Type:</strong> ${type}</p>` : ""}
@@ -36,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ${distance ? `<p><strong>Distance:</strong> ${distance}</p>` : ""}
             ${temp ? `<p><strong>Temperature:</strong> ${temp}</p>` : ""}
             ${desc ? `<p class="desc">${desc}</p>` : ""}
+            
             ${contact ? `<p><strong>Contact:</strong> ${contact}</p>` : ""}
             ${address ? `<p><strong>Address:</strong> ${address}</p>` : ""}
           </div>
