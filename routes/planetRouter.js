@@ -13,25 +13,26 @@ Click on a planet in the sidebar to explore its details like color, diameter,
 distance from the Sun, and temperature range.`
 };
 
-// Show all planets page
-planetRouter.get("/", (req, res) => {
-    res.render("pages/index.ejs", {
+// Show single planet details
+planetRouter.get("/:name", (req, res) => {
+    const paramName = req.params.name.trim().toLowerCase();
+    const selectedItem = terrestrialPlanets.find(p => p.name.toLowerCase() === paramName);
+
+    res.render("pages/featured.ejs", {
         pageType: "planets",
         sidebarItems: terrestrialPlanets,
-        welcomeBox,
-        selectedItem: null
+        selectedItem: selectedItem,
+        welcomeBox: null
     });
 });
 
-// Show single planet details
-planetRouter.get("/:name", (req, res) => {
-    const selectedItem = terrestrialPlanets.find(p => p.name === req.params.name);
-
-    res.render("pages/index.ejs", {
+// Show all planets page
+planetRouter.get("/", (req, res) => {
+    res.render("pages/featured.ejs", {
         pageType: "planets",
         sidebarItems: terrestrialPlanets,
-        welcomeBox: null,
-        selectedItem
+        selectedItem: null,
+        welcomeBox
     });
 });
 

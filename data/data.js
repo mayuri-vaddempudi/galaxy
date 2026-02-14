@@ -1,102 +1,6 @@
-/*export const galaxy = [
-  {
-    type: "Main-Sequence Star",
-    icon: "⭐",
-    description:
-      "Stars that fuse hydrogen into helium in their cores. Most common type of star.",
-    examples: [
-      {
-        name: "Sun",
-        spectralType: "G-type",
-        distanceLightYears: 0,
-        color: "Yellow",
-        size: "1.4 million km",
-        temperature: "5500°C",
-      },
-      {
-        name: "Sirius",
-        spectralType: "A-type",
-        distanceLightYears: 8.6,
-        color: "White",
-        size: "2.38 million km",
-        temperature: "9940°C",
-      },
-      {
-        name: "Proxima Centauri",
-        spectralType: "M-type",
-        distanceLightYears: 4.24,
-        color: "Red",
-        size: "200,000 km",
-        temperature: "3042°C",
-      },
-    ],
-  },
-  {
-    type: "Terrestrial Planet",
-    icon: "🪐",
-    description:
-      "Terrestrial planets are rocky worlds composed primarily of silicate rocks, metals, and a solid surface, distinguishing them from gas giants.",
-    examples: [
-      {
-        name: "Venus",
-        planetType: "Terrestrial",
-        distanceFromSun_AU: 0.72,
-        color: "Yellowish-white",
-        diameter: "12104 km",
-        surfaceTempRange: "~462°C (constant, extremely hot)",
-      },
-      {
-        name: "Earth",
-        planetType: "Terrestrial",
-        distanceFromSun_AU: 1.0,
-        color: "Blue, white, brown, green",
-        diameter: "12742 km",
-        surfaceTempRange: "-88°C to 58°C",
-      },
-      {
-        name: "Mars",
-        planetType: "Terrestrial",
-        distanceFromSun_AU: 1.52,
-        color: "Reddish-brown",
-        diameter: "6779 km",
-        surfaceTempRange: "-143°C to 35°C",
-      },
-    ],
-  },
-  {
-    type: "Sprial Galaxy",
-    icon: "🌌",
-    description:
-      "A spiral galaxy is a type of galaxy characterized by a rotating, flat disk featuring spiral arms of gas, dust, and young stars that curve outward from a dense, central bulge of older stars.",
-    examples: [
-      {
-        name: "Milky Way",
-        morphologicalType: "Barred Spiral (SBbc)",
-        diameterLightYears: 105700,
-        stars: "100-400 billion",
-        distanceFromUs: 0,
-      },
-      {
-        name: "Andromeda Galaxy (M31)",
-        morphologicalType: "Spiral (Sb)",
-        diameterLightYears: 220000,
-        stars: "~1 trillion",
-        distanceFromUs: 2.537,
-      },
-      {
-        name: "Triangulum Galaxy (M33)",
-        morphologicalType: "Spiral (Sc)",
-        diameterLightYears: 60000,
-        stars: "40 billion",
-        distanceFromUs: 2.723,
-      },
-    ],
-  },
-];*/
-
-// 🌟 Main Sequence Stars
 export const mainSequenceStars = [
   {
+    title: "Main-Sequence Star",
     name: "Sun",
     image: "/images/sun1.jpg",
     spectralType: "G-type",
@@ -104,10 +8,10 @@ export const mainSequenceStars = [
     color: "Yellow",
     size: "1.4 million km diameter",
     temperature: "5500°C",
-    description:
-      "The Sun is the center of our solar system and provides energy for life on Earth.",
+    description: "The Sun is the center of our solar system and provides energy for life on Earth.",
   },
   {
+    title: "Main-Sequence Star",
     name: "Sirius",
     image: "/images/sirius.jpg",
     spectralType: "A-type",
@@ -115,12 +19,12 @@ export const mainSequenceStars = [
     color: "White",
     size: "2.38 million km diameter",
     temperature: "9940°C",
-    description:
-      "Sirius is the brightest star in the night sky, located in the Canis Major constellation.",
+    description: "Sirius is the brightest star in the night sky, located in the Canis Major constellation.",
   },
   {
+    title: "Main-Sequence Star",
     name: "Proxima Centauri",
-    image: "/images/proxima.jpg",
+    image: "/images/proximacentauri.jpg",
     spectralType: "M-type",
     distanceLightYears: 4.24,
     color: "Red",
@@ -130,18 +34,21 @@ export const mainSequenceStars = [
   },
 ];
 
+
 // 🪐 Terrestrial Planets
 export const terrestrialPlanets = [
   {
-    name: "Mercury",
-    image: "/images/mercury.jpg",
+    title: "Terrestrial Planet",
+    name: "Venus",
+    image: "/images/venus.jpg",
     distanceFromSun_AU: 0.39,
     color: "Gray",
     diameter: "4,879 km",
     surfaceTempRange: "-173°C to 427°C",
-    description: "Mercury is the smallest and closest planet to the Sun.",
+    description: "Venus is the smallest and closest planet to the Sun.",
   },
   {
+    title: "Terrestrial Planet",
     name: "Earth",
     image: "/images/earth.jpg",
     distanceFromSun_AU: 1.0,
@@ -151,30 +58,32 @@ export const terrestrialPlanets = [
     description: "Earth is the only known planet that supports life.",
   },
   {
+    title: "Terrestrial Planet",
     name: "Mars",
     image: "/images/mars.jpg",
     distanceFromSun_AU: 1.52,
     color: "Red",
     diameter: "6,779 km",
     surfaceTempRange: "-143°C to 35°C",
-    description:
-      "Mars is known as the Red Planet and may have had water in the past.",
+    description: "Mars is known as the Red Planet and may have had water in the past.",
   },
 ];
+
 
 // 🌌 Spiral Galaxies
 export const spiralGalaxies = [
   {
+    title: "Sprial Galaxy",
     name: "Milky Way",
     image: "/images/milkyway.jpg",
     morphologicalType: "Barred Spiral (SBbc)",
     diameterLightYears: 105700,
     stars: "100–400 billion",
     distanceFromUs: 0,
-    description:
-      "The Milky Way is our home galaxy containing our solar system.",
+    description: "The Milky Way is our home galaxy containing our solar system.",
   },
   {
+    title: "Sprial Galaxy",
     name: "Andromeda Galaxy",
     image: "/images/andromeda.jpg",
     morphologicalType: "Spiral (Sb)",
@@ -184,6 +93,7 @@ export const spiralGalaxies = [
     description: "Andromeda is the nearest large galaxy to the Milky Way.",
   },
   {
+    title: "Sprial Galaxy",
     name: "Triangulum Galaxy",
     image: "/images/triangulum.jpg",
     morphologicalType: "Spiral (Sc)",
@@ -194,42 +104,37 @@ export const spiralGalaxies = [
   },
 ];
 
-export const aboutDetails = {
-  title: "About Shining Stars",
-  description:
-    "Shining Stars is a web app to explore planets, stars, and galaxies in our universe. Learn about their properties, distances, and more!",
-  team: [
-    {
-      name: "Mayuri",
-      role: "Developer",
-      image: "/images/mayuri.jpg",
-      contact: 123456,
-      address: "stockholm",
-    },
-    {
-      name: "Suneetha",
-      role: "Designer",
-      image: "/images/suneetha.jpg",
-      contact: 123456,
-      address: "stockholm",
-    },
-    {
-      name: "TingLi",
-      role: "Designer",
-      image: "/images/tingli.jpg",
-      contact: 123456,
-      address: "stockholm",
-    },
-    {
-      name: "Gabriell",
-      role: "Designer",
-      image: "/images/gabriell.jpg",
-      contact: 123456,
-      address: "stockholm",
-    },
-  ],
-  contact: {
-    email: "info@shiningstars.com",
-    twitter: "@shiningstars",
+export const aboutDetails = [
+  {
+    description: "Shining Stars is a web app to explore planets, stars, and galaxies in our universe. Learn about their properties, distances, and more!",
+    name: "Mayuri",
+    role: "Developer",
+    image: "/images/mayuri.jpg",
+    contact: 123456,
+    address: "stockholm",
   },
-};
+  {
+    description: "Shining Stars is a web app to explore planets, stars, and galaxies in our universe. Learn about their properties, distances, and more!",
+    name: "Suneetha",
+    role: "Designer",
+    image: "/images/suneetha.jpg",
+    contact: 123456,
+    address: "stockholm",
+  },
+  {
+    description: "Shining Stars is a web app to explore planets, stars, and galaxies in our universe. Learn about their properties, distances, and more!",
+    name: "Ting",
+    role: "Developer",
+    image: "/images/ting.jpg",
+    contact: 123456,
+    address: "stockholm",
+  },
+  {
+    description: "Shining Stars is a web app to explore planets, stars, and galaxies in our universe. Learn about their properties, distances, and more!",
+    name: "Gabriella",
+    role: "Designer",
+    image: "/images/gabi.jpg",
+    contact: 123456,
+    address: "stockholm",
+  }
+]

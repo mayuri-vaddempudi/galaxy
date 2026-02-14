@@ -1,76 +1,28 @@
-<%- include("../partials/header") %>
-  <link rel="stylesheet" href="/css/styles.css">
+<!DOCTYPE html>
+<html lang="en">
 
-  <body>
-    <div class="main">
-      <%- include("../partials/sidebar", { pageType, sidebarItems }) %>
+<head>
+  <title>Home</title>
+  <%- include("../partials/head.ejs") %>
+</head>
 
-        <div class="main-content" id="details-panel">
-          <% if (typeof welcomeBox !=="undefined" && welcomeBox) { %>
-            <div class="welcome-box">
-              <h1>
-                <%= welcomeBox.title %>
-              </h1>
-              <p>
-                <%= welcomeBox.description %>
-              </p>
-            </div>
-            <% } else if (typeof selectedItem !=="undefined" && selectedItem) { %>
-              <div class="content-details">
-                <% if (selectedItem.image) { %>
-                  <img src="<%= selectedItem.image %>" class="details-img">
-                  <% } %>
-                    <div class="details-text">
-                      <h1>
-                        <%= selectedItem.name %>
-                      </h1>
-                      <% if (selectedItem.type) { %>
-                        <p><strong>Type:</strong>
-                          <%= selectedItem.type %>
-                        </p>
-                        <% } %>
-                          <% if (selectedItem.color) { %>
-                            <p><strong>Color:</strong>
-                              <%= selectedItem.color %>
-                            </p>
-                            <% } %>
-                              <% if (selectedItem.diameter) { %>
-                                <p><strong>Diameter:</strong>
-                                  <%= selectedItem.diameter %>
-                                </p>
-                                <% } %>
-                                  <% if (selectedItem.distance) { %>
-                                    <p><strong>Distance:</strong>
-                                      <%= selectedItem.distance %>
-                                    </p>
-                                    <% } %>
-                                      <% if (selectedItem.temp) { %>
-                                        <p><strong>Temperature:</strong>
-                                          <%= selectedItem.temp %>
-                                        </p>
-                                        <% } %>
-                                          <% if (selectedItem.desc) { %>
-                                            <p class="desc">
-                                              <%= selectedItem.desc %>
-                                            </p>
-                                            <% } %>
-                                              <% if (selectedItem.contact) { %>
-                                                <p><strong>Contact:</strong>
-                                                  <%= selectedItem.contact %>
-                                                </p>
-                                                <% } %>
-                                                  <% if (selectedItem.address) { %>
-                                                    <p><strong>Address:</strong>
-                                                      <%= selectedItem.address %>
-                                                    </p>
-                                                    <% } %>
-                    </div>
-              </div>
-              <% } else { %>
-                <h2>Click an item from the sidebar</h2>
-                <% } %>
+<body class="home-page">
+  <%- include("../partials/header.ejs") %>
+
+
+    <main class="main">
+      <%- include("../partials/sidebar.ejs")%>
+
+        <div class="content">
+          <h1>Welcome to mysterious Universe</h1>
+          <canvas id="canvas"></canvas>
         </div>
-    </div>
-  </body>
-  <script src="/js/javascript.js" defer></script>
-  <%- include("../partials/footer") %>
+        <div class="detail hide"></div>
+    </main>
+
+    <%- include("../partials/footer.ejs") %>
+
+
+</body>
+
+</html>

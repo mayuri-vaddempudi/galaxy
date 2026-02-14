@@ -1,9 +1,172 @@
-<html>
+<body class="detail-page">
 
-<body>
-    <div>
+  <%- include("../partials/header") %>
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <div class="page-banner">
+
+      <% if (pageType==="planets" ) { %>
+        <img src="/images/planet-banner.jpg" alt="Planets Banner">
+
+        <% } else if (pageType==="stars" ) { %>
+          <img src="/images/stars-banner.jpg" alt="Stars Banner">
+
+          <% } else if (pageType==="galaxies" ) { %>
+            <img src="/images/galaxy-banner.jpg" alt="Galaxy Banner">
+            <% } else if (pageType==="about" ) { %>
+              <img src="/images/about-banner.jpg" alt="About Banner">
+
+              <% } else { %>
+                <img src="/images/default-banner.jpg" alt="Space Banner">
+                <% } %>
+
+                  <div class="banner-text">
+                    <h1>
+                      <%= pageType.toUpperCase() %>
+                    </h1>
+                  </div>
 
     </div>
-</body>
 
-</html>
+
+
+    <div class="main">
+
+      <!-- Sidebar -->
+      <%- include("../partials/sidebar", { pageType, sidebarItems }) %>
+
+        <!-- Main Content -->
+        <div class="main-content" id="details-panel">
+
+          <!-- Welcome Message -->
+          <% if (welcomeBox) { %>
+            <div class="welcome-box">
+              <h1>
+                <%= welcomeBox.title %>
+              </h1>
+              <p>
+                <%= welcomeBox.description %>
+              </p>
+            </div>
+            <% } %>
+
+              <!-- Selected Item Details -->
+              <% if (selectedItem) { %>
+                <div class="details">
+
+                  <% if (selectedItem.image) { %>
+                    <img src="<%= selectedItem.image %>" alt="<%= selectedItem.name %>" class="details-img">
+                    <% } %>
+
+                      <div class="details-text">
+                        <h1>
+                          <%= selectedItem.name %>
+                        </h1>
+
+                        <% if (selectedItem.description) { %>
+                          <p>
+                            <%= selectedItem.description %>
+                          </p>
+                          <% } %>
+
+                            <% if (selectedItem.surfaceTempRange) { %>
+                              <p><b>Temperature:</b>
+                                <%= selectedItem.surfaceTempRange %>
+                              </p>
+                              <% } %>
+
+                                <% if (selectedItem.color) { %>
+                                  <p><b>Color:</b>
+                                    <%= selectedItem.color %>
+                                  </p>
+                                  <% } %>
+
+                                    <% if (selectedItem.diameter) { %>
+                                      <p><b>Diameter:</b>
+                                        <%= selectedItem.diameter %>
+                                      </p>
+                                      <% } %>
+
+                                        <% if (selectedItem.distance || selectedItem.distanceFromSun_AU) { %>
+                                          <p><b>Distance:</b>
+                                            <%= selectedItem.distance || selectedItem.distanceFromSun_AU %>
+                                          </p>
+                                          <% } %>
+
+                                            <% if (selectedItem.morphologicalType) { %>
+                                              <p><b>Morphological Type:</b>
+                                                <%= selectedItem.morphologicalType %>
+                                              </p>
+                                              <% } %>
+
+                                                <% if (selectedItem.diameterLightYears) { %>
+                                                  <p><b>Diameter (Light Years):</b>
+                                                    <%= selectedItem.diameterLightYears %>
+                                                  </p>
+                                                  <% } %>
+
+                                                    <% if (selectedItem.spectralType) { %>
+                                                      <p><b>spectral - Type:</b>
+                                                        <%= selectedItem.spectralType %>
+                                                      </p>
+                                                      <% } %>
+                                                        <% if (selectedItem.distanceLightYears) { %>
+                                                          <p><b>distance Light - Years:</b>
+                                                            <%= selectedItem.distanceLightYears %>
+                                                          </p>
+
+                                                          <% } %>
+                                                            <% if (selectedItem.size) { %>
+                                                              <p><b>Size:</b>
+                                                                <%= selectedItem.size %>
+                                                              </p>
+
+                                                              <% } %>
+                                                                <% if (selectedItem.temperature) { %>
+                                                                  <p><b>Temperature:</b>
+                                                                    <%= selectedItem.temperature %>
+                                                                  </p>
+
+                                                                  <% } %>
+
+                                                                    <% if (selectedItem.stars) { %>
+                                                                      <p><b>Stars:</b>
+                                                                        <%= selectedItem.stars %>
+                                                                      </p>
+                                                                      <% } %>
+                                                                        <% if (selectedItem.role) { %>
+                                                                          <p><b>Role:</b>
+                                                                            <%= selectedItem.role %>
+                                                                          </p>
+                                                                          <% } %>
+
+                                                                            <% if (selectedItem.contact) { %>
+                                                                              <p><b>Contact:</b>
+                                                                                <%= selectedItem.contact %>
+                                                                              </p>
+                                                                              <% } %>
+
+                                                                                <% if (selectedItem.address) { %>
+                                                                                  <p><b>Address:</b>
+                                                                                    <%= selectedItem.address %>
+                                                                                  </p>
+                                                                                  <% } %>
+
+
+                      </div>
+                </div>
+                <% } %>
+
+                  <!-- Default Message -->
+                  <% if (!welcomeBox && !selectedItem) { %>
+                    <h2>Click an item from the sidebar</h2>
+                    <% } %>
+
+        </div> <!-- main-content -->
+
+    </div> <!-- main -->
+
+    <script src="/js/javascript.js" defer></script>
+    <%- include("../partials/footer") %>
+
+</body>
