@@ -2,7 +2,7 @@ export const mainSequenceStars = [
   {
     title: "Main-Sequence Star",
     name: "Sun",
-    image: "/images/sun.jpg",
+    image: "/images/sun1.jpg",
     spectralType: "G-type",
     distanceLightYears: 0,
     color: "Yellow",
