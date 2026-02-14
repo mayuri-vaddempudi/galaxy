@@ -33,8 +33,8 @@ export const mainSequenceStars = [
     description: "Proxima Centauri is the closest known star to the Sun.",
   },
 ];
- 
- 
+
+
 // 🪐 Terrestrial Planets
 export const terrestrialPlanets = [
   {
@@ -68,8 +68,8 @@ export const terrestrialPlanets = [
     description: "Mars is known as the Red Planet and may have had water in the past.",
   },
 ];
- 
- 
+
+
 // 🌌 Spiral Galaxies
 export const spiralGalaxies = [
   {
@@ -103,38 +103,38 @@ export const spiralGalaxies = [
     description: "Triangulum is a smaller spiral galaxy in the Local Group.",
   },
 ];
- 
+
 export const aboutDetails = [
   {
     description: "Shining Stars is a web app to explore planets, stars, and galaxies in our universe. Learn about their properties, distances, and more!",
     name: "Mayuri",
     role: "Developer",
     image: "/images/mayuri.jpg",
-    contact: 123456, 
+    contact: 123456,
     address: "stockholm",
   },
   {
-     description: "Shining Stars is a web app to explore planets, stars, and galaxies in our universe. Learn about their properties, distances, and more!",
-     name: "Suneetha",
-     role: "Designer",
-     image: "/images/suneetha.jpg",
-     contact: 123456,
-     address: "stockholm", 
+    description: "Shining Stars is a web app to explore planets, stars, and galaxies in our universe. Learn about their properties, distances, and more!",
+    name: "Suneetha",
+    role: "Designer",
+    image: "/images/suneetha.jpg",
+    contact: 123456,
+    address: "stockholm",
   },
   {
-     description: "Shining Stars is a web app to explore planets, stars, and galaxies in our universe. Learn about their properties, distances, and more!",
-     name: "Ting",
-     role: "Developer",
-     image: "/images/ting.jpg",
-     contact: 123456,
-     address: "stockholm", 
+    description: "Shining Stars is a web app to explore planets, stars, and galaxies in our universe. Learn about their properties, distances, and more!",
+    name: "Ting",
+    role: "Developer",
+    image: "/images/ting.jpg",
+    contact: 123456,
+    address: "stockholm",
   },
   {
-     description: "Shining Stars is a web app to explore planets, stars, and galaxies in our universe. Learn about their properties, distances, and more!",
-     name: "Gabriell",
-     role: "Designer",
-     image: "/images/gabi.jpg",
-     contact: 123456,
-     address: "stockholm", 
+    description: "Shining Stars is a web app to explore planets, stars, and galaxies in our universe. Learn about their properties, distances, and more!",
+    name: "Gabriella",
+    role: "Designer",
+    image: "/images/gabi.jpg",
+    contact: 123456,
+    address: "stockholm",
   }
 ]

@@ -8,39 +8,39 @@ import router from "./routes/aboutRouter.js";
 import starRouter from "./routes/starRouter.js";
 
 const allItems = [
-  { name: "Terrestrial Planets", type: "title" },
-  ...terrestrialPlanets.map(p => ({ ...p, type: "planets" })),
   { name: "Main-Sequence Star", type: "title" },
   ...mainSequenceStars.map(s => ({ ...s, type: "stars" })),
+  { name: "Terrestrial Planets", type: "title" },
+  ...terrestrialPlanets.map(p => ({ ...p, type: "planets" })),
   { name: "Spiral Galaxies", type: "title" },
   ...spiralGalaxies.map(g => ({ ...g, type: "galaxies" })),
 
 ];
- 
+
 const app = express()
 const port = process.env.PORT
 const __dirname = path.resolve()
 
-app.set("view engine",'ejs')
-app.set("views", path.join(__dirname, "views")); 
+app.set("view engine", 'ejs')
+app.set("views", path.join(__dirname, "views"));
 app.use(express.static("public"))
 
 app.use('/data', express.static(path.join(__dirname, 'data')));
 
-app.get("/", (req,res) => {
-   res.render(path.join(__dirname, "/views/pages/index.ejs"),
-   {
+app.get("/", (req, res) => {
+  res.render(path.join(__dirname, "/views/pages/index.ejs"),
+    {
       pageType: "all",
       sidebarItems: allItems
-   })
+    })
 
 })
 
+app.use("/stars", starRouter);
 app.use("/planets", planetRouter);
-app.use("/stars", starRouter)
 app.use("/galaxies", galaxyRouter);
 app.use("/about", router)
-app.listen(port, ()=>{
+app.listen(port, () => {
   console.log(`Server is running on ${port}`);
-  
+
 })

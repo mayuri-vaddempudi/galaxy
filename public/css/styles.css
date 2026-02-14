@@ -1,5 +1,5 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -7,7 +7,6 @@ html {
 }
 
 body {
-  background: black;
   display: flex;
   flex-direction: column;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -18,19 +17,24 @@ body {
 
 .header {
   background-color: #3e3186;
-  border-bottom: 1px rgba(255, 255, 255, 0.1);
+  border-bottom: 2px solid white;
   display: flex;
   justify-content: space-between;
   padding: 15px;
   position: fixed;
   width: 100%;
   z-index: 99;
+  box-shadow: 2px 2px white;
+}
+
+.logo {
+  margin-left: 70px;
 }
 
 .logo img {
   border-radius: 50%;
-  height: 60px;
-  width: 60px;
+  height: 100px;
+  width: 100px;
 }
 
 .menu {
@@ -61,7 +65,7 @@ body {
   padding: 10px;
 }
 
-.header .icon{
+.header .icon {
   display: none;
 }
 
@@ -82,27 +86,26 @@ body {
   padding: 85px 30px;
 }
 
-.sidebar h3{
+.sidebar h3 {
   cursor: pointer;
   font-size: 20px;
   margin-top: -5px;
   white-space: nowrap;
 }
 
-.sidebar-item[data-type ="title"] span
-{
+.sidebar-item[data-type="title"] span {
   display: none;
 }
 
 .home-hide .sidebar-item {
   cursor: pointer;
   display: none;
-  margin-left: 15px; 
+  margin-left: 15px;
   margin-top: -25px;
   font-size: 16px;
 }
 
-.sidebar-item.show{
+.sidebar-item.show {
   display: block;
 }
 
@@ -117,51 +120,54 @@ body {
   width: 100%;
 }
 
+.content-details {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 15px;
+  color: white;
+}
+
 .content h1 {
-  color: #e0e0e0;
+  color: #ffcc00;
   font-size: 2rem;
   margin: 10px 0;
   position: relative;
   text-align: center;
-  top: 140px;
+  top: 225px;
 }
 
 .content #canvas {
   display: block;
-  width: 100vw;
-  height: 100vh;
+  width: 84vw;
+  height: auto;
+  margin-top: -55px;
 }
 
 .detail {
   align-items: center;
-  color:  #e0e0e0;
+  color: #e0e0e0;
   display: flex;
   margin: auto;
   z-index: 99;
 }
 
-.detail img{
+.detail img {
   margin-right: 66px;
   height: 96px;
   width: 100px;
 }
 
-.detail .desc{
+.detail .desc {
   display: flex;
   flex-direction: column;
 }
 
 .desc a {
-  color:  #e0e0e0;
+  color: #e0e0e0;
   display: block;
   font-size: 1rem;
   margin-top: 20px;
-}
-
-.main-content{
-  color: #ede5e5;
-  margin-top:78px;
-  z-index: 111;
 }
 
 
@@ -205,6 +211,7 @@ body {
   color: #fff;
   padding: 40px 0 10px;
   font-family: Arial, sans-serif;
+  border-top: 2px solid white;
 }
 
 .footer p {
@@ -214,7 +221,7 @@ body {
 
 .footer-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
   max-width: 1100px;
   margin: auto;
@@ -249,8 +256,8 @@ body {
 
 .main {
   display: flex;
-  margin-top: 80px;
-  /* adjust if header is fixed */
+  margin-top: 2px;
+  background-color: black;
 }
 
 .sidebar {
@@ -258,7 +265,44 @@ body {
   padding: 20px;
   background-color: #3e3186;
   color: #e0e0e0;
+  background: linear-gradient(180deg, #3e3186, #0b0433);
+  color: white;
 }
+
+.page-banner {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  margin-top: 80px;
+  /* header is fixed */
+}
+
+.page-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 0 0 15px black;
+}
+
+.welcome-box {
+  color: white;
+  padding: 25px;
+  border-radius: 15px;
+  line-height: 1.7;
+}
+
+
+
 
 .sidebar-item {
   padding: 20px;
@@ -271,16 +315,39 @@ body {
 }
 
 .main-content {
+  background: black;
+  position: relative;
+  overflow: hidden;
   flex: 1;
-  padding: 100px;
-  color: #e0e0e0;
+  padding: 90px;
+  height: 484px;
+  color: #ede5e5;
   text-align: center;
+}
+
+.main-content::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: url("https://raw.githubusercontent.com/JulianLaval/canvas-particle-network/master/img/stars.png");
+  animation: moveStars 100s linear infinite;
+  opacity: 0.5;
+}
+
+@keyframes moveStars {
+  from {
+    transform: translate(0, 0);
+  }
+
+  to {
+    transform: translate(-500px, -500px);
+  }
 }
 
 .details-container {
   display: flex;
   gap: 20px;
-  /* space between image and info */
   align-items: flex-start;
   margin-top: 20px;
 }
@@ -317,6 +384,23 @@ body {
 
 .welcome-box h1 {
   color: #ffcc00;
+}
+
+.details img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.details {
+  display: flex;
+  gap: 100px;
+  align-items: flex-start;
+  text-align: start;
+}
+
+.details-text p {
+  font-size: 16px;
 }
 
 /* ===========================
@@ -424,24 +508,25 @@ body {
     max-width: 300px;
   }
 }
+
 @media (max-width: 431px) {
-  .header{
+  .header {
     justify-content: flex-start;
   }
 
-  .header .icon{
+  .header .icon {
     display: block;
     height: 40px;
     margin-left: 214px;
     margin-top: 12px;
     width: 40px;
   }
-  .menu{
+
+  .menu {
     display: none;
   }
 
-  .menu{
+  .menu {
     flex-direction: column;
   }
 }
-
