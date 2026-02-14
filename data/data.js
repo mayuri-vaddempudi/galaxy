@@ -125,7 +125,7 @@ export const aboutDetails = [
      description: "Shining Stars is a web app to explore planets, stars, and galaxies in our universe. Learn about their properties, distances, and more!",
      name: "Ting",
      role: "Developer",
-     image: "/images/ting.jpg",
+     image: "/images/tingli.jpg",
      contact: 123456,
      address: "stockholm", 
   },
@@ -133,7 +133,7 @@ export const aboutDetails = [
      description: "Shining Stars is a web app to explore planets, stars, and galaxies in our universe. Learn about their properties, distances, and more!",
      name: "Gabriell",
      role: "Designer",
-     image: "/images/gabi.jpg",
+     image: "/images/gabriell.jpg",
      contact: 123456,
      address: "stockholm", 
   }
