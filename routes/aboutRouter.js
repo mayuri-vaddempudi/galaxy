@@ -16,6 +16,7 @@ router.get("/:name", (req, res) => {
   const selectedItem = aboutDetails.find(p => p.name.toLowerCase() === paramName);
   res.render("pages/featured.ejs", {
     pageType: "about",
+    pageTitle:"About",
     sidebarItems: aboutDetails,
     selectedItem: selectedItem,
     welcomeBox: null
@@ -25,6 +26,7 @@ router.get("/:name", (req, res) => {
 router.get("/", (req, res) => {
   res.render("pages/featured.ejs", {
     pageType: "about",
+    pageTitle:"About",
     sidebarItems: aboutDetails,
     selectedItem: null,
     welcomeBox

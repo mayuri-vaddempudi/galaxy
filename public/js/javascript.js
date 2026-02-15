@@ -19,7 +19,8 @@ if (icon && menu) {
     }
   });
 }
-
+console.log("icon:", icon);
+console.log("menu:", menu);
 if (document.body.classList.contains("home-page")) {
   const sidebar = document.querySelector(".sidebar");
   const detail = document.querySelector(".detail");

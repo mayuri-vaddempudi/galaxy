@@ -20,6 +20,7 @@ planetRouter.get("/:name", (req, res) => {
 
     res.render("pages/featured.ejs", {
         pageType: "planets",
+        pageTitle:"planets",
         sidebarItems: terrestrialPlanets,
         selectedItem: selectedItem,
         welcomeBox: null
@@ -30,6 +31,7 @@ planetRouter.get("/:name", (req, res) => {
 planetRouter.get("/", (req, res) => {
     res.render("pages/featured.ejs", {
         pageType: "planets",
+        pageTitle:"planets",
         sidebarItems: terrestrialPlanets,
         selectedItem: null,
         welcomeBox

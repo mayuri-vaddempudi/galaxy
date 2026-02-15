@@ -19,6 +19,7 @@ galaxyRouter.get("/:name", (req, res) => {
 
   res.render("pages/featured.ejs", {
     pageType: "galaxies",
+    pageTitle:"galaxies",
     sidebarItems: spiralGalaxies,
     selectedItem: selectedItem,
     welcomeBox: null
@@ -28,6 +29,7 @@ galaxyRouter.get("/:name", (req, res) => {
 galaxyRouter.get("/", (req, res) => {
   res.render("pages/featured.ejs", {
     pageType: "galaxies",
+    pageTitle:"galaxies",
     sidebarItems: spiralGalaxies,
     selectedItem: null,
     welcomeBox

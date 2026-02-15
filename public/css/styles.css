@@ -297,9 +297,6 @@ body {
   line-height: 1.7;
 }
 
-
-
-
 .sidebar-item {
   padding: 20px;
   cursor: pointer;
@@ -418,9 +415,15 @@ body {
   .logo img {
     height: 45px;
     width: 45px;
+    margin-left: -62px;
   }
 
   .menu {
+    display: none;
+  }
+
+  .menu {
+    flex-direction: column;
     flex-wrap: wrap;
     gap: 8px;
   }
@@ -429,20 +432,39 @@ body {
     font-size: 0.9rem;
   }
 
+   .header .icon {
+    display: block;
+    height: 40px;
+    right: 15px;
+    position: fixed;
+    top: 13px;
+    width: 40px;
+    z-index: 9999;
+  }
+
   .main {
     flex-direction: column;
+    min-height: 100vh;
   }
 
   .sidebar {
+    align-items: center;
+    flex-direction: column;
+    font-size: 30px;
+    gap: 5px;
+    justify-content: center;
+    margin-top: 10px;
     width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    padding: 10px;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+  }
+
+  .home-hide .sidebar-item{
+    margin-top: -8px;
+  }
+
+  .content #canvas {
+  width: 100%;
+  height: 52vh;
+  display: block;
   }
 
   .sidebar-item {
@@ -478,19 +500,19 @@ body {
 }
 
 /* Medium devices (tablets) */
-@media screen and (max-width: 992px) {
-
-  .sidebar {
-    width: 220px;
+@media screen and (min-width: 767px) {
+  .footer {
+    width: 114%;
   }
-
-  .menu a {
-    font-size: 1rem;
+  
+  .menu{
+    display: flex;
   }
-
+  
   .details-image img {
     max-width: 200px;
   }
+
 
   .details-container {
     gap: 15px;
@@ -509,24 +531,3 @@ body {
   }
 }
 
-@media (max-width: 431px) {
-  .header {
-    justify-content: flex-start;
-  }
-
-  .header .icon {
-    display: block;
-    height: 40px;
-    margin-left: 214px;
-    margin-top: 12px;
-    width: 40px;
-  }
-
-  .menu {
-    display: none;
-  }
-
-  .menu {
-    flex-direction: column;
-  }
-}

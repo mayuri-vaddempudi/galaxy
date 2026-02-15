@@ -31,6 +31,7 @@ app.get("/", (req, res) => {
   res.render(path.join(__dirname, "/views/pages/index.ejs"),
     {
       pageType: "all",
+      pageTitle:"Home",
       sidebarItems: allItems
     })
 

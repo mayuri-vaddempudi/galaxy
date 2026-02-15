@@ -17,6 +17,7 @@ starRouter.get("/:name", (req, res) => {
     const selectedItem = mainSequenceStars.find(p => p.name.toLowerCase() === paramName);
     res.render("pages/featured.ejs", {
         pageType: "stars",
+        pageTitle:"stars",
         sidebarItems: mainSequenceStars,
         selectedItem: selectedItem,
         welcomeBox: null
@@ -27,6 +28,7 @@ starRouter.get("/:name", (req, res) => {
 starRouter.get("/", (req, res) => {
     res.render("pages/featured.ejs", {
         pageType: "stars",
+        pageTitle:"stars",
         sidebarItems: mainSequenceStars,
         selectedItem: null,
         welcomeBox
